@@ -110,7 +110,7 @@ def process_file(path, each_file, output, name):
 
 def process_folder(path, output):
     config = ConfigParser()
-    config.read('config.cfg')
+    config.read('./config.cfg')
     name = config.get('str', 'prefix')
     for each_file in os.listdir(path):
         process_file(path, each_file, output, name)
@@ -118,6 +118,6 @@ def process_folder(path, output):
 
 if __name__ == '__main__':
     config = ConfigParser()
-    config.read('config.cfg')
+    config.read('./config.cfg')
     process_folder(config.get('path', 'src'), config.get('path', 'out'))
 
